@@ -1,0 +1,113 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+#colors:
+#yellow = 
+#red = #ff3005
+
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+label=💻
+interval=10
+color=#ffffe8
+#min_width=CPU 100.00%
+#color=#d60afa
+#separator=false
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=🧠
+separator=true
+interval=30
+color=#ffcccc
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+markup=pango
+interval=5
+color=#9af441
+#color=#faa70a
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+[volume]
+#label=VOL
+label=🎵
+color=#51bfff
+interval=1
+signal=10
+#STEP=5%
+
+
+
+# Wifi
+[wifi]
+label=📡
+#color=#6699ff #faa70a
+interval=10
+instance=wlp4s0
+# Brightness
+# 
+[brightness]
+label=🔆
+interval=1
+color=#f99a01
+
+
+# Time
+[time]
+label=🕒
+command=date '+%I:%M'
+interval=5
+color=#ffffe8
+
+# Date
+[date]
+label=📅
+command=date '+%m/%d'
+interval=100
+color=#ffffe8
+
+# Shutdown
+[shutdown_menu]
+color=#1cff3a
+full_text=⏻ 

@@ -1,0 +1,6 @@
+#!/bin/bash
+MAXBRIGHT=852
+BRIGHTDIR="/sys/class/backlight/intel_backlight/"
+CURR=`cat $BRIGHTDIR"brightness"`
+PERCENTAGE=`python -c "from __future__ import division; print int(($CURR/$MAXBRIGHT) * 100)"`
+echo "$PERCENTAGE%"
